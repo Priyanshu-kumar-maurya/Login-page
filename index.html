@@ -2,40 +2,211 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>login Form in HTML and CSS| codehal</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeoAuth - Modern Glassmorphic Login & Sign-Up Portal</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- BoxIcons CDN -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    
+    <!-- Stylesheet with Cache Busting -->
+    <link rel="stylesheet" href="style.css?v=2.0">
 </head>
 <body>
-    <div class="wrapper">
-        <form action="">
-            <h1>Login</h1>
-            <div class="input-box">
-                <input type="text" placeholder="Username">
-                <required>
-                    <i class='bx bxs-user'></i>
+    <!-- Ambient Glowing Background Elements -->
+    <div class="bg-shape bg-shape-1"></div>
+    <div class="bg-shape bg-shape-2"></div>
+    <div class="bg-shape bg-shape-3"></div>
 
+    <div class="app-container">
+        <!-- Main Glass Card Container -->
+        <main class="auth-card" id="auth-card">
+            
+            <!-- Brand Badge -->
+            <div class="brand-header">
+                <div class="brand-icon">
+                    <i class='bx bxs-shield-plus'></i>
                 </div>
-                    <div class="input-box">
-                        <input type="password"
-                        placeholder="password" required>
-                        <i class='bx bxs-lock'></i>
-
+                <h1 class="brand-title">Neo<strong>Auth</strong></h1>
+                <p class="brand-subtitle">Secure access to your account</p>
             </div>
 
-            <div class="remember-forgot">
-                <label><input type="checkbox">Remember me</label>
-                <a href="a">Forgot password?</a>
-            </div>
-            <button type="submit" class="btn">Login</button>
-            <div class="register-like">
-                <p>Don't have an account?<a href="#">register</a></p>
+            <!-- Tab Switcher (Login / Register) -->
+            <div class="auth-tabs">
+                <button type="button" class="tab-btn active" id="tab-login" data-tab="login">Sign In</button>
+                <button type="button" class="tab-btn" id="tab-register" data-tab="register">Create Account</button>
+                <div class="tab-slider"></div>
             </div>
 
-        </form>
+            <!-- Form Wrapper with Sliding Panels -->
+            <div class="forms-slider" id="forms-slider">
+                
+                <!-- LOGIN FORM -->
+                <form class="auth-form login-form active-form" id="login-form" autocomplete="on">
+                    <div class="input-group">
+                        <label for="login-username">Username or Email</label>
+                        <div class="input-field">
+                            <i class='bx bxs-user'></i>
+                            <input type="text" id="login-username" placeholder="Enter username or email" required autocomplete="username">
+                        </div>
+                    </div>
 
+                    <div class="input-group">
+                        <label for="login-password">Password</label>
+                        <div class="input-field">
+                            <i class='bx bxs-lock-alt'></i>
+                            <input type="password" id="login-password" placeholder="Enter your password" required autocomplete="current-password">
+                            <button type="button" class="toggle-password" data-target="login-password" title="Toggle password visibility">
+                                <i class='bx bx-show'></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-row-options">
+                        <label class="custom-checkbox">
+                            <input type="checkbox" id="remember-me" checked>
+                            <span class="checkmark"></span>
+                            <span class="label-text">Remember me</span>
+                        </label>
+                        <button type="button" class="forgot-link" id="open-forgot-btn">Forgot password?</button>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="login-submit-btn">
+                        <span class="btn-text">Sign In</span>
+                        <i class='bx bx-right-arrow-alt'></i>
+                    </button>
+
+                    <div class="social-divider">
+                        <span>or continue with</span>
+                    </div>
+
+                    <div class="social-auth-grid">
+                        <button type="button" class="social-btn" title="Sign in with Google">
+                            <i class='bx bxl-google'></i>
+                            <span>Google</span>
+                        </button>
+                        <button type="button" class="social-btn" title="Sign in with GitHub">
+                            <i class='bx bxl-github'></i>
+                            <span>GitHub</span>
+                        </button>
+                    </div>
+
+                    <div class="switch-prompt">
+                        <p>Don't have an account? <a href="#" id="switch-to-reg">Sign Up</a></p>
+                    </div>
+                </form>
+
+                <!-- REGISTER / SIGN UP FORM -->
+                <form class="auth-form register-form" id="register-form" autocomplete="on">
+                    <div class="input-group">
+                        <label for="reg-name">Full Name</label>
+                        <div class="input-field">
+                            <i class='bx bxs-user-detail'></i>
+                            <input type="text" id="reg-name" placeholder="John Doe" required autocomplete="name">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="reg-email">Email Address</label>
+                        <div class="input-field">
+                            <i class='bx bxs-envelope'></i>
+                            <input type="email" id="reg-email" placeholder="name@example.com" required autocomplete="email">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="reg-password">Password</label>
+                        <div class="input-field">
+                            <i class='bx bxs-lock-alt'></i>
+                            <input type="password" id="reg-password" placeholder="Create a strong password" required autocomplete="new-password">
+                            <button type="button" class="toggle-password" data-target="reg-password" title="Toggle password visibility">
+                                <i class='bx bx-show'></i>
+                            </button>
+                        </div>
+                        <!-- Live Password Strength Meter -->
+                        <div class="password-strength-wrap" id="pwd-strength-wrap">
+                            <div class="strength-bar"><div class="strength-progress" id="pwd-strength-progress"></div></div>
+                            <span class="strength-text" id="pwd-strength-text">Password strength</span>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="reg-confirm-password">Confirm Password</label>
+                        <div class="input-field">
+                            <i class='bx bxs-check-shield'></i>
+                            <input type="password" id="reg-confirm-password" placeholder="Re-enter password" required autocomplete="new-password">
+                            <button type="button" class="toggle-password" data-target="reg-confirm-password" title="Toggle password visibility">
+                                <i class='bx bx-show'></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-row-options">
+                        <label class="custom-checkbox">
+                            <input type="checkbox" id="terms-agree" required>
+                            <span class="checkmark"></span>
+                            <span class="label-text">I agree to the <a href="#" class="terms-link">Terms & Privacy</a></span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="register-submit-btn">
+                        <span class="btn-text">Create Account</span>
+                        <i class='bx bx-user-plus'></i>
+                    </button>
+
+                    <div class="switch-prompt">
+                        <p>Already have an account? <a href="#" id="switch-to-login">Sign In</a></p>
+                    </div>
+                </form>
+
+            </div>
+        </main>
+
+        <!-- Forgot Password Modal -->
+        <div class="modal-overlay" id="forgot-modal">
+            <div class="modal-card">
+                <button type="button" class="modal-close-btn" id="close-forgot-btn" title="Close">
+                    <i class='bx bx-x'></i>
+                </button>
+                <div class="modal-header">
+                    <div class="modal-icon">
+                        <i class='bx bx-key'></i>
+                    </div>
+                    <h2>Reset Password</h2>
+                    <p>Enter your email address and we'll send you instructions to reset your password.</p>
+                </div>
+                <form id="forgot-form">
+                    <div class="input-group">
+                        <label for="forgot-email">Email Address</label>
+                        <div class="input-field">
+                            <i class='bx bxs-envelope'></i>
+                            <input type="email" id="forgot-email" placeholder="name@example.com" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <span class="btn-text">Send Reset Link</span>
+                        <i class='bx bx-send'></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Toast Feedback Notification -->
+        <div class="toast-notification" id="toast" role="alert">
+            <i class='bx bx-check-circle toast-icon'></i>
+            <span class="toast-msg">Action successful!</span>
+        </div>
+
+        <!-- Footer Credits -->
+        <footer class="app-footer">
+            <p>Designed with <i class='bx bxs-heart heart-beat'></i> by <a href="https://github.com/Priyanshu-kumar-maurya" target="_blank" rel="noopener noreferrer">Priyanshu Kumar Maurya</a></p>
+        </footer>
     </div>
+
+    <!-- Scripts with Cache Busting -->
+    <script src="script.js?v=2.0"></script>
 </body>
 </html>
