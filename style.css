@@ -761,3 +761,28 @@ body {
         height: 44px;
     }
 }
+
+@media (max-width: 360px) {
+    body {
+        padding: 8px;
+    }
+
+    .auth-card {
+        padding: 20px 14px;
+        border-radius: 20px;
+    }
+
+    .brand-title {
+        font-size: 1.25rem;
+    }
+
+    .tab-btn {
+        font-size: 0.85rem;
+        padding: 8px 0;
+    }
+
+    .social-btn {
+        height: 40px;
+        font-size: 0.82rem;
+    }
+}
