@@ -50,6 +50,20 @@
     -webkit-tap-highlight-color: transparent;
 }
 
+/* Universal SVG Icon Styles */
+.svg-icon {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    fill: currentColor;
+    flex-shrink: 0;
+}
+
+.svg-icon.input-icon {
+    color: var(--text-muted);
+}
+
 body {
     min-height: 100vh;
     min-height: 100dvh;
